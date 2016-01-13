@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="posts">
+    
+    {% for post in site.categories.Design %}
+
+        {% if post.url %}
+           <a id="h1a" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <p id="date">{{ post.author }} • {{ post.date | date: "%b %-d, %Y" }}</p>
+            <div id="excerpt">{{ post.excerpt }}  </div>
+            <div id="readmore"><a href="{{ post.url | prepend: site.baseurl }}">Read More</a></div>
+         {% endif %}
+    {% endfor %}
+
+
+</div>

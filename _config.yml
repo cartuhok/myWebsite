@@ -1,0 +1,39 @@
+# Build settings
+
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Carter Rink, Front End Designer
+email: carter.m.rink@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Carter Rink is a front end designer located in Boston, Massachusetts. Join me as I write about CSS, JavaScript, HTML, and design.  
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://carterrink.com/" # the base hostname & protocol for your site
+twitter_username: carter_rink
+github_username:  cartuhok
+paginate: 3
+paginate_path: "/Blog/page:num/"
+
+# Build settings
+markdown: kramdown
+permalink: /:title
+gems: [jekyll-paginate]
+    
+
+sass:
+  sass_dir: assets/css
+  style: :nested
+  
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      author: Carter Rink
+      layout: "post"

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+  <title>Responsive Web Design Using CSS Viewport</title>
+  <meta name="description" content="Designing mobile first isn’t just a trend, it’s a principle. When the size of your canvas is undefined, design constraints can be a challenge. With CSS3, tho...">
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="canonical" href="http://carterrink.com//responsive-web-design-css-viewport">
+  <link rel="alternate" type="application/rss+xml" title="Carter Rink, Front End Designer" href="http://carterrink.com//feed.xml">
+</head>
+    
+<body>
+
+ <div class="barNav"> 
+    <a href="http://carterrink.com/">&copy;&reg;</a>
+    
+    <a href="#">Recent Posts</a>
+    <a href="#">CSS</a>
+    <a href="#">JavaScript</a>
+    <a href="#">Design</a>  
+</div>
+
+<div class="cover" onclick="toggleNav();"></div>
+<div class="hamburger" id="hamburger" onclick="toggleNav();">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>    
+    
+<nav>
+  <div class="logo">
+    <h1>&copy;&reg;</h1>
+  </div>
+  <div class="links">
+    <a class="active" href="">Home</a>
+    <a href="#">CSS</a>
+    <a href="#">JavaScript</a>
+    <a href="#">Design</a>
+  </div>
+  <footer>
+    <p>carter.m.rink@gmail.com</p>
+  </footer>
+</nav>
+    
+<div class="page-content">
+  <div class="wrapper">
+    <div class="posts">
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 id="h1a" itemprop="name headline">Responsive Web Design Using CSS Viewport</h1>
+    <p class="post-meta"><time datetime="2016-01-10T12:38:03-05:00" itemprop="datePublished">Jan 10, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Carter Rink</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Designing mobile first isn’t just a trend, it’s a principle. When the size of your canvas is undefined, design constraints can be a challenge. With CSS3, those constraints become more concrete with view height <code class="highlighter-rouge">vh</code> and view width <code class="highlighter-rouge">vw</code>.</p>
+
+<p>Before designing any mobile first site, include the tag:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span> </code></pre></figure>
+
+<p>This meta tag is one of the most important parts of mobile design.  It scales the width of a webpage to the device that’s viewing it. Without it, the content will render as it would on a desktop and force mobile users to zoom in.</p>
+
+<p>Starting with this tag is considered best practice, and it unlocks one of the best parts of CSS3, viewport height <code class="highlighter-rouge">vh</code> and width <code class="highlighter-rouge">vw</code>.  <code class="highlighter-rouge">1vh/vw</code> translates into 1/100th of the viewport’s height/width.</p>
+
+<p>Say we want a fullscreen background image.  We could define the height in pixels but the result would vary depending on the device. One easy solution is to declare:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bannerpic"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.bannerpic</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("http://carterrink.com/clouds.jpg")</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100vw</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Using the view height and view width sizing units, we ensure that the background image will stretch across the height and width of the viewport.<br /><br /></p>
+
+<p data-height="581" data-theme-id="0" data-slug-hash="pgwPbP" data-default-tab="result" data-user="cartuhok" class="codepen">See the Pen <a href="http://codepen.io/cartuhok/pen/pgwPbP/">pgwPbP</a> by cartuhok (<a href="http://codepen.io/cartuhok">@cartuhok</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p><br /></p>
+
+<p>Before using these units, it’s important to note that there are certain browser restrictions.  According to <a href="http://caniuse.com/#search=vh">can I use it</a>, IE10, 11 and Microsoft Edge do not support the <code class="highlighter-rouge">vmax</code> unit. <code class="highlighter-rouge">1vmax</code> represents <code class="highlighter-rouge">1vh</code> or <code class="highlighter-rouge">1vw</code>, whichever is larger. In other words, <code class="highlighter-rouge">1vmax</code> equals <code class="highlighter-rouge">1vh</code> in portrait mode, and <code class="highlighter-rouge">1vw</code> in landscape.  The opposite is true for <code class="highlighter-rouge">vmin</code>.  It’s also important to note that in IE9, the syntax <code class="highlighter-rouge">vm</code> is used instead of <code class="highlighter-rouge">vmin</code>.  Opera Mini is not supported at all.</p>
+
+<p>With the introduction of these sizing units in CSS3, designing for different viewports is a little less of a hassle. Try using them in your next project to ensure a more uniform user expirence across devices.</p>
+
+
+  </div>
+
+</article>
+
+    </div>
+    </div>    
+    </div>
+
+<script src="/assets/js/jquery-2.1.1.min.js"></script>
+<script src="/assets/js/functions.js" type="text/javascript"></script>
+</body>
+</html>
